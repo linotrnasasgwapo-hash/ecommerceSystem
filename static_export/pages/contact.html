@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopVibe - Your premium online shopping destination for electronics, fashion, accessories and home essentials.">
+    <title>Contact — ShopVibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const storedTheme = localStorage.getItem('shopvibe-theme');
+        if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light-mode');
+        }
+    </script>
+</head>
+<body>
+
+<!-- Flash Messages (SweetAlert) -->
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="container nav-container">
+        <a href="../index.html" class="logo">
+            <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li class="nav-search-mobile">
+                <form action="/e-commerceSystem/pages/shop.php" method="GET">
+                    <input type="text" name="search" placeholder="Search products...">
+                    <button type="button" onclick="alert('Backend features disabled in static view.')"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <form action="/e-commerceSystem/pages/shop.php" method="GET" class="nav-search-form nav-search-desktop">
+                <input type="text" name="search" placeholder="Search products...">
+                <button type="button" onclick="alert('Backend features disabled in static view.')"><i class="fas fa-search"></i></button>
+            </form>
+
+            <div class="nav-cart-wrapper" style="position: relative;">
+                <a href="/e-commerceSystem/pages/cart.php" class="cart-icon" title="Cart" id="navCartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                                            <span class="cart-badge" id="navCartBadge" style="display: none;">0</span>
+                                    </a>
+                
+                <div class="cart-dropdown" id="navCartDropdown" style="position: absolute; top: 100%; right: 0; width: 320px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); box-shadow: var(--shadow-lg); padding: 16px; display: none; z-index: 1000; margin-top: 10px;">
+                    <div id="cartDropdownItems" style="max-height: 300px; overflow-y: auto; margin-bottom: 12px;">
+                        <!-- Skeleton Loader -->
+                        <div class="skeleton-item" style="display: flex; gap: 12px; margin-bottom: 12px;">
+                            <div class="skeleton" style="width: 50px; height: 50px; border-radius: 4px;"></div>
+                            <div style="flex: 1; display:flex; flex-direction:column; gap:8px;">
+                                <div class="skeleton" style="width: 80%; height: 12px; border-radius: 2px;"></div>
+                                <div class="skeleton" style="width: 40%; height: 10px; border-radius: 2px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <strong>Total:</strong>
+                        <span id="cartDropdownTotal" style="color: var(--primary); font-weight: bold;">$0.00</span>
+                    </div>
+                    <a href="/e-commerceSystem/pages/checkout.php" class="btn btn-primary btn-sm btn-full" style="display: block;">Checkout</a>
+                </div>
+            </div>
+
+            <button id="themeToggle" class="btn btn-outline btn-sm" style="padding: 6px 10px; border:none;" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+
+                            <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                <a href="register.html" class="btn btn-primary btn-sm nav-register-btn">Register</a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Bottom Navigation Bar -->
+<div class="mobile-bottom-nav">
+    <a href="../index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="shop.html"><i class="fas fa-store"></i><span>Shop</span></a>
+    <a href="/e-commerceSystem/pages/cart.php"><i class="fas fa-shopping-bag"></i><span>Cart</span></a>
+    <a href="login.html"><i class="fas fa-user"></i><span>Profile</span></a>
+</div>
+
+<main class="main-content">
+
+
+<div class="page-header">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span>/</span>
+            <span>Contact</span>
+        </div>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="contact-layout">
+            <!-- Contact Info -->
+            <div class="contact-info-card">
+                <h2 style="font-size: 1.3rem; margin-bottom: 24px;">Get in Touch</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 28px;">
+                    Have a question, feedback, or need help? We'd love to hear from you. Fill out the form or reach us directly.
+                </p>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Saraet Himamaylan City</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>support@shopvibe.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Mon–Fri: 9 AM – 6 PM<br>Sat–Sun: 10 AM – 4 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+                <h2>Send Us a Message</h2>
+                <form action="/e-commerceSystem/includes/contact_handler.php" method="POST" data-validate>
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="How can we help?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-lg btn-full">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="../index.html" class="footer-logo">
+                    <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+                </a>
+                <p class="footer-desc">Your premium destination for quality products. We bring you the best in electronics, fashion, accessories, and home essentials.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="/e-commerceSystem/pages/cart.php">Shopping Cart</a></li>
+                    <li><a href="login.html">My Account</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Saraet Himamaylan City</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> support@shopvibe.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopVibe. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+window.baseUrlString = '/e-commerceSystem/';
+function quickView(id) {
+    Swal.fire({
+        title: 'Loading...', 
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading(),
+        background: 'var(--bg-card)',
+        color: 'var(--text-primary)'
+    });
+    fetch(window.baseUrlString + 'includes/quick_view.php?id=' + id)
+    .then(r => r.json())
+    .then(d => {
+       if (d.success) {
+          Swal.fire({
+             html: `
+                <div style="display:flex; gap:20px; text-align:left; flex-wrap:wrap;">
+                    <div style="flex:1; min-width:250px;">
+                        <img src="${d.product.image}" style="width:100%; border-radius:12px; object-fit:cover;">
+                    </div>
+                    <div style="flex:1; min-width:250px;">
+                        <span style="color:var(--primary); font-size:0.8rem; text-transform:uppercase; font-weight:bold;">${d.product.category}</span>
+                        <h2 style="margin:5px 0 10px; font-size:1.5rem;">${d.product.name}</h2>
+                        <p style="color:var(--primary); font-size:1.5rem; font-weight:bold;">${d.product.priceFormatted}</p>
+                        <p style="color:var(--text-secondary); font-size:0.9rem; margin:15px 0; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden;">${d.product.description}</p>
+                        <a href="${d.product.url}" class="btn btn-primary btn-full" style="margin-top:10px;">View Full Details</a>
+                    </div>
+                </div>`,
+             width: 800,
+             showConfirmButton: false,
+             showCloseButton: true,
+             background: 'var(--bg-card)',
+             color: 'var(--text-primary)',
+             customClass: { popup: 'quick-view-popup' }
+          });
+       } else {
+          Swal.fire({ icon: 'error', title: 'Error', text: d.message, background: 'var(--bg-card)', color: 'var(--text-primary)' });
+       }
+    }).catch(e => {
+        Swal.fire({ icon: 'error', title: 'Error', text: 'Failed to load product.', background: 'var(--bg-card)', color: 'var(--text-primary)' });
+    });
+}
+</script>
+</body>
+</html>

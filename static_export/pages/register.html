@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopVibe - Your premium online shopping destination for electronics, fashion, accessories and home essentials.">
+    <title>Register — ShopVibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const storedTheme = localStorage.getItem('shopvibe-theme');
+        if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light-mode');
+        }
+    </script>
+</head>
+<body>
+
+<!-- Flash Messages (SweetAlert) -->
+
+<!-- Navigation -->
+<nav class="navbar auth-navbar" style="background: transparent; border: none; position: absolute; width: 100%; top: 0;">
+    <div class="container nav-container" style="justify-content: center; height: 100px;">
+        <a href="../index.html" class="logo" style="font-size: 2rem;">
+            <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+        </a>
+    </div>
+</nav>
+
+
+<main class="main-content">
+
+
+<div class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Create Account</h1>
+            <p class="auth-subtitle">Join the premium ShopVibe community</p>
+
+            <form action="/e-commerceSystem/includes/auth_actions.php" method="POST" data-validate>
+                <input type="hidden" name="action" value="register">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Min. 6 characters" minlength="6" required autocomplete="new-password">
+                        <button type="button" class="password-toggle" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Repeat your password" required autocomplete="new-password">
+                        <button type="button" class="password-toggle" id="toggleConfirmPassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-lg btn-full">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+
+            <div class="auth-divider">Or join with</div>
+
+            <div class="social-auth">
+                <button class="btn-social"><i class="fab fa-google"></i> Google</button>
+                <button class="btn-social"><i class="fab fa-facebook-f"></i> Facebook</button>
+            </div>
+
+            <div class="auth-footer">
+                Already have an account? <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const setupToggle = (toggleId, inputId) => {
+        const toggle = document.getElementById(toggleId);
+        const input = document.getElementById(inputId);
+        if (toggle && input) {
+            toggle.addEventListener('click', () => {
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+                toggle.querySelector('i').classList.toggle('fa-eye');
+                toggle.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        }
+    };
+    setupToggle('togglePassword', 'password');
+    setupToggle('toggleConfirmPassword', 'confirm_password');
+});
+</script>
+
+</main>
+
+<!-- Footer -->
+<div class="auth-minimal-footer" style="padding: 20px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; position: relative; z-index: 10;">
+    &copy; 2026 ShopVibe Premium. All rights reserved.
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+window.baseUrlString = '/e-commerceSystem/';
+function quickView(id) {
+    Swal.fire({
+        title: 'Loading...', 
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading(),
+        background: 'var(--bg-card)',
+        color: 'var(--text-primary)'
+    });
+    fetch(window.baseUrlString + 'includes/quick_view.php?id=' + id)
+    .then(r => r.json())
+    .then(d => {
+       if (d.success) {
+          Swal.fire({
+             html: `
+                <div style="display:flex; gap:20px; text-align:left; flex-wrap:wrap;">
+                    <div style="flex:1; min-width:250px;">
+                        <img src="${d.product.image}" style="width:100%; border-radius:12px; object-fit:cover;">
+                    </div>
+                    <div style="flex:1; min-width:250px;">
+                        <span style="color:var(--primary); font-size:0.8rem; text-transform:uppercase; font-weight:bold;">${d.product.category}</span>
+                        <h2 style="margin:5px 0 10px; font-size:1.5rem;">${d.product.name}</h2>
+                        <p style="color:var(--primary); font-size:1.5rem; font-weight:bold;">${d.product.priceFormatted}</p>
+                        <p style="color:var(--text-secondary); font-size:0.9rem; margin:15px 0; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden;">${d.product.description}</p>
+                        <a href="${d.product.url}" class="btn btn-primary btn-full" style="margin-top:10px;">View Full Details</a>
+                    </div>
+                </div>`,
+             width: 800,
+             showConfirmButton: false,
+             showCloseButton: true,
+             background: 'var(--bg-card)',
+             color: 'var(--text-primary)',
+             customClass: { popup: 'quick-view-popup' }
+          });
+       } else {
+          Swal.fire({ icon: 'error', title: 'Error', text: d.message, background: 'var(--bg-card)', color: 'var(--text-primary)' });
+       }
+    }).catch(e => {
+        Swal.fire({ icon: 'error', title: 'Error', text: 'Failed to load product.', background: 'var(--bg-card)', color: 'var(--text-primary)' });
+    });
+}
+</script>
+</body>
+</html>
