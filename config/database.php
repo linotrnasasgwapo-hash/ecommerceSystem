@@ -4,17 +4,16 @@
  * Railway MySQL PDO Connection
  */
 
-$host = getenv("mysql.railway.internal");
-$database = getenv("railway");
-$user = getenv("root");
-$password = getenv("igyIIECWHWvLJVpXSNPIUCoKhqaiYhpW");
-$port = getenv("3306");
-
+define('DB_HOST', 'kodama.proxy.rlwy.net');
+define('DB_NAME', 'railway');
+define('DB_USER', 'root');
+define('DB_PASS', ' igyIIECWHWvLJVpXSNPIUCoKhqaiYhpW');
+define('DB_PORT', '50255');
 try {
     $pdo = new PDO(
-        "mysql:host=$host;port=$port;dbname=$database;charset=utf8mb4",
-        $user,
-        $password,
+        "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4",
+        DB_USER,
+        DB_PASS,
         [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
