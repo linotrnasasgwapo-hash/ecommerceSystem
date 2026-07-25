@@ -79,7 +79,20 @@ $flash = getFlash();
             <li><a href="<?= baseUrl('pages/shop.php') ?>" class="nav-link">Shop</a></li>
             <li><a href="<?= baseUrl('pages/about.php') ?>" class="nav-link">About</a></li>
             <li><a href="<?= baseUrl('pages/contact.php') ?>" class="nav-link">Contact</a></li>
-            <?php if (!isLoggedIn()): ?>
+            <?php if (isLoggedIn()): ?>
+            <li class="nav-user-mobile-section" style="border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 5px;">
+                <div style="font-size: 0.85rem; color: var(--primary); font-weight: 600; padding: 4px 16px;">
+                    <i class="fas fa-user-circle"></i> <?= sanitize(currentUserName()) ?>
+                </div>
+            </li>
+            <?php if (isAdmin()): ?>
+            <li class="nav-user-mobile-item"><a href="<?= baseUrl('admin/') ?>" class="nav-link"><i class="fas fa-tachometer-alt"></i> Admin Panel</a></li>
+            <?php endif; ?>
+            <li class="nav-user-mobile-item"><a href="<?= baseUrl('pages/profile.php') ?>" class="nav-link"><i class="fas fa-user-cog"></i> My Profile</a></li>
+            <li class="nav-user-mobile-item"><a href="<?= baseUrl('pages/wishlist.php') ?>" class="nav-link"><i class="fas fa-heart"></i> My Wishlist</a></li>
+            <li class="nav-user-mobile-item"><a href="<?= baseUrl('pages/orders.php') ?>" class="nav-link"><i class="fas fa-box-open"></i> My Orders</a></li>
+            <li class="nav-user-mobile-item"><a href="<?= baseUrl('includes/auth_actions.php?action=logout') ?>" class="nav-link" style="color: var(--error);"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <?php else: ?>
             <li class="nav-auth-mobile"><a href="<?= baseUrl('pages/login.php') ?>" class="nav-link"><i class="fas fa-user"></i> Login / Register</a></li>
             <?php endif; ?>
         </ul>

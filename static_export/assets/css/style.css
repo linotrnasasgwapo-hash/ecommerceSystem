@@ -1892,7 +1892,7 @@ select.form-control {
     background: rgba(255, 71, 87, 0.1);
 }
 
-.nav-auth-mobile { display: none; }
+.nav-auth-mobile, .nav-user-mobile-section, .nav-user-mobile-item { display: none; }
 
 @media (max-width: 768px) {
     body { padding-bottom: 75px; /* Accounts for bottom nav */ }
@@ -1912,13 +1912,15 @@ select.form-control {
         transition: var(--transition);
         z-index: 999;
         box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
     .nav-links.open { transform: translateY(0); }
     .hamburger { display: flex; }
-    .nav-register-btn, .nav-login-btn { display: none !important; }
-    .nav-auth-mobile { display: block !important; }
+    .nav-register-btn, .nav-login-btn, .nav-user-dropdown { display: none !important; }
+    .nav-auth-mobile, .nav-user-mobile-section, .nav-user-mobile-item { display: block !important; }
 
-    .logo { font-size: 1.15rem; }
+    .logo { font-size: 1.05rem; white-space: nowrap; }
 
     .hero { padding: 50px 0 40px; text-align: center; }
     .hero-content { margin: 0 auto; }
@@ -1966,8 +1968,10 @@ select.form-control {
 }
 
 @media (max-width: 480px) {
-    .container { padding: 0 14px; }
-    .logo { font-size: 1.25rem; }
+    .container { padding: 0 10px; }
+    .nav-container { padding: 0 8px; }
+    .logo { font-size: 0.95rem; }
+    .nav-actions { gap: 4px; }
     .hero h1 { font-size: 1.75rem; }
     .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .product-card .product-img { height: 140px; }
