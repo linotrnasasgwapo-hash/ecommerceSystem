@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=1784978677">
+    <link rel="stylesheet" href="assets/css/style.css?v=1784978849">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         const storedTheme = localStorage.getItem('renalyn-theme') || localStorage.getItem('shopvibe-theme');
@@ -39,7 +39,8 @@
             <li><a href="pages/shop.html" class="nav-link">Shop</a></li>
             <li><a href="pages/about.html" class="nav-link">About</a></li>
             <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
-        </ul>
+                        <li class="nav-auth-mobile"><a href="pages/login.html" class="nav-link"><i class="fas fa-user"></i> Login / Register</a></li>
+                    </ul>
 
         <div class="nav-actions">
             <form action="/e-commerceSystem/pages/shop.php" method="GET" class="nav-search-form nav-search-desktop">
@@ -76,7 +77,7 @@
                 <i class="fas fa-moon"></i>
             </button>
 
-                            <a href="pages/login.html" class="btn btn-outline btn-sm">Login</a>
+                            <a href="pages/login.html" class="btn btn-outline btn-sm nav-login-btn">Login</a>
                 <a href="pages/register.html" class="btn btn-primary btn-sm nav-register-btn">Register</a>
             
             <button class="hamburger" id="hamburger" aria-label="Toggle Menu">

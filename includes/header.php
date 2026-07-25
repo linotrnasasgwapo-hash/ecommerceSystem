@@ -79,6 +79,9 @@ $flash = getFlash();
             <li><a href="<?= baseUrl('pages/shop.php') ?>" class="nav-link">Shop</a></li>
             <li><a href="<?= baseUrl('pages/about.php') ?>" class="nav-link">About</a></li>
             <li><a href="<?= baseUrl('pages/contact.php') ?>" class="nav-link">Contact</a></li>
+            <?php if (!isLoggedIn()): ?>
+            <li class="nav-auth-mobile"><a href="<?= baseUrl('pages/login.php') ?>" class="nav-link"><i class="fas fa-user"></i> Login / Register</a></li>
+            <?php endif; ?>
         </ul>
 
         <div class="nav-actions">
@@ -138,7 +141,7 @@ $flash = getFlash();
                     </div>
                 </div>
             <?php else: ?>
-                <a href="<?= baseUrl('pages/login.php') ?>" class="btn btn-outline btn-sm">Login</a>
+                <a href="<?= baseUrl('pages/login.php') ?>" class="btn btn-outline btn-sm nav-login-btn">Login</a>
                 <a href="<?= baseUrl('pages/register.php') ?>" class="btn btn-primary btn-sm nav-register-btn">Register</a>
             <?php endif; ?>
 
