@@ -1,4 +1,8 @@
 <?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/functions.php';
@@ -11,6 +15,9 @@ $flash = getFlash();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="description" content="Renalyn's Favorite Online Shop - Your favorite online destination for chocolates, flowers, delicacies, and salon beauty services.">
     <title><?= isset($pageTitle) ? sanitize($pageTitle) . " — Renalyn's Favorite" : "Renalyn's Favorite Online Shop" ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
