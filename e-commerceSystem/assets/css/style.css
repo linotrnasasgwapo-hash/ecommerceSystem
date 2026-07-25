@@ -1,57 +1,57 @@
 /* =====================================================
-   ShopVibe — E-Commerce System Stylesheet
-   Modern Dark Navy + Gold Accent Theme
+   Renalyn's Favorite Online Shop — Girly Theme Stylesheet
+   Modern Rose Pink + Pastel Blush & Plum Aesthetic
    ===================================================== */
 
 /* ── CSS Custom Properties ── */
 :root {
-    --primary: #c9a84c;
-    --primary-dark: #b08d3a;
-    --primary-light: #e8d48b;
-    --bg-dark: #0b0f1a;
-    --bg-card: #111827;
-    --bg-card-hover: #1a2332;
-    --bg-surface: #151c2c;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --border-color: #1e293b;
+    --primary: #ff4757;
+    --primary-dark: #e84393;
+    --primary-light: #ff758c;
+    --bg-dark: #180b1e;
+    --bg-card: #24122e;
+    --bg-card-hover: #2e173a;
+    --bg-surface: #1f0d28;
+    --text-primary: #fff0f5;
+    --text-secondary: #f472b6;
+    --text-muted: #c084fc;
+    --border-color: #3e1a50;
     --success: #22c55e;
     --error: #ef4444;
-    --warning: #f59e0b;
+    --warning: #fbbf24;
     --info: #3b82f6;
-    --radius: 12px;
-    --radius-sm: 8px;
-    --radius-lg: 16px;
-    --shadow: 0 4px 20px rgba(0,0,0,0.3);
-    --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-lg: 24px;
+    --shadow: 0 4px 25px rgba(255, 71, 87, 0.15);
+    --shadow-lg: 0 10px 40px rgba(232, 67, 147, 0.25);
     --transition: all 0.3s ease;
     --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --container-width: 1200px;
-    --nav-bg: rgba(11,15,26,0.85);
-    --dropdown-bg: rgba(30, 41, 59, 0.95);
-    --grad-1: #111827;
-    --grad-2: #0f172a;
-    --grad-auth-1: rgba(11, 15, 26, 0.4);
-    --grad-auth-2: rgba(11, 15, 26, 0.9);
+    --nav-bg: rgba(24, 11, 30, 0.88);
+    --dropdown-bg: rgba(36, 18, 46, 0.96);
+    --grad-1: #281134;
+    --grad-2: #1e0927;
+    --grad-auth-1: rgba(24, 11, 30, 0.5);
+    --grad-auth-2: rgba(24, 11, 30, 0.95);
 }
 
 /* ── Light Mode Properties ── */
 :root.light-mode {
-    --bg-dark: #faf9f6; /* Softer, eye-friendly off-white */
+    --bg-dark: #fff0f5; /* Soft Blush Pink */
     --bg-card: #ffffff;
-    --bg-card-hover: #fdfaf3;
-    --bg-surface: #f4eedf; /* Soft surface tone */
-    --text-primary: #1e1b18; /* Softer text color */
-    --text-secondary: #4a453f;
-    --text-muted: #78716c;
-    --border-color: #e5dfd3;
-    --nav-bg: rgba(250, 249, 246, 0.85);
-    --dropdown-bg: rgba(255, 255, 255, 0.95);
-    --grad-1: #f3e9d2; /* Soothing champagne */
-    --grad-2: #e8d7b3; /* Slightly deeper champagne */
-    --grad-auth-1: rgba(250, 249, 246, 0.7);
-    --grad-auth-2: rgba(250, 249, 246, 0.95);
+    --bg-card-hover: #fff5f9;
+    --bg-surface: #fce7f3; /* Cotton Candy Pink Surface */
+    --text-primary: #3b0764; /* Deep Velvet Plum */
+    --text-secondary: #86198f;
+    --text-muted: #a21caf;
+    --border-color: #fbcfe8;
+    --nav-bg: rgba(255, 240, 245, 0.88);
+    --dropdown-bg: rgba(255, 255, 255, 0.98);
+    --grad-1: #fce7f3;
+    --grad-2: #fbcfe8;
+    --grad-auth-1: rgba(255, 240, 245, 0.7);
+    --grad-auth-2: rgba(255, 240, 245, 0.98);
 }
 
 /* ── Reset & Base ── */
@@ -183,7 +183,7 @@ ul { list-style: none; }
 }
 .nav-link:hover, .nav-link.active {
     color: var(--primary);
-    background: rgba(201,168,76,0.08);
+    background: rgba(255,71,87,0.12);
 }
 
 .nav-actions {
@@ -205,7 +205,7 @@ ul { list-style: none; }
     position: absolute;
     top: 0; right: 0;
     background: var(--primary);
-    color: var(--bg-dark);
+    color: #ffffff;
     font-size: 0.65rem;
     font-weight: 700;
     width: 18px; height: 18px;
@@ -219,8 +219,8 @@ ul { list-style: none; }
 .nav-user-dropdown { position: relative; }
 
 .nav-user-btn {
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(255,71,87,0.12);
+    border: 1px solid rgba(255,71,87,0.25);
     color: var(--text-primary);
     padding: 6px 14px;
     border-radius: var(--radius-sm);
@@ -243,10 +243,10 @@ ul { list-style: none; }
     background: var(--dropdown-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 107, 129, 0.2);
     border-radius: var(--radius);
     min-width: 220px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 35px rgba(232, 67, 147, 0.25);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-12px);
@@ -271,7 +271,7 @@ ul { list-style: none; }
     transition: var(--transition);
 }
 .dropdown-menu a:hover {
-    background: rgba(201,168,76,0.08);
+    background: rgba(255,71,87,0.1);
     color: var(--primary);
 }
 
@@ -316,14 +316,15 @@ ul { list-style: none; }
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--bg-dark);
+    background: linear-gradient(135deg, #ff4757 0%, #ff6b81 50%, #e84393 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
 }
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--primary-light), var(--primary));
-    color: var(--bg-dark);
+    background: linear-gradient(135deg, #ff6b81 0%, #ff4757 50%, #d63031 100%);
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(201,168,76,0.3);
+    box-shadow: 0 8px 25px rgba(255, 71, 87, 0.45);
 }
 
 .btn-outline {
@@ -333,7 +334,7 @@ ul { list-style: none; }
 }
 .btn-outline:hover {
     background: var(--primary);
-    color: var(--bg-dark);
+    color: #ffffff;
 }
 
 .btn-danger {
@@ -359,9 +360,9 @@ ul { list-style: none; }
     transition: var(--transition);
 }
 .card:hover {
-    border-color: rgba(201,168,76,0.3);
+    border-color: rgba(255,71,87,0.4);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 35px rgba(232,67,147,0.2);
 }
 
 /* ── Product Card ── */
@@ -438,10 +439,10 @@ ul { list-style: none; }
     bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(11,15,26,0.85);
+    background: rgba(24,11,30,0.88);
     backdrop-filter: blur(8px);
     color: var(--primary);
-    border: 1px solid rgba(201,168,76,0.3);
+    border: 1px solid rgba(255,71,87,0.4);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -454,7 +455,7 @@ ul { list-style: none; }
     bottom: 20px;
     opacity: 1;
 }
-.quick-view-btn:hover { background: var(--primary); color: var(--bg-dark); }
+.quick-view-btn:hover { background: var(--primary); color: #ffffff; }
 
 /* ── Product Grid ── */
 .product-grid {
@@ -478,7 +479,7 @@ ul { list-style: none; }
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,71,87,0.18) 0%, transparent 70%);
     border-radius: 50%;
 }
 
@@ -488,8 +489,8 @@ ul { list-style: none; }
 
 .hero-badge {
     display: inline-block;
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(255,71,87,0.15);
+    border: 1px solid rgba(255,71,87,0.35);
     color: var(--primary);
     padding: 6px 16px;
     border-radius: 50px;
