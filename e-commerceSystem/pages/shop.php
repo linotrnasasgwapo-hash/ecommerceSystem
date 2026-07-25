@@ -135,7 +135,15 @@ $categories = $stmtCats->fetchAll();
                 <?php else: ?>
                     <div class="product-grid">
                         <?php foreach ($products as $product): 
-                            $isService = ($product['category_id'] == 4 || stripos($product['category_name'], 'beauty') !== false || stripos($product['category_name'], 'salon') !== false || stripos($product['category_name'], 'service') !== false);
+                            $isService = ($product['category_id'] == 4 
+                                || in_array((int)$product['id'], [5, 6, 7]) 
+                                || stripos($product['name'], 'rebond') !== false 
+                                || stripos($product['name'], 'makeup') !== false 
+                                || stripos($product['name'], 'nail') !== false 
+                                || stripos($product['name'], 'specialist') !== false 
+                                || stripos($product['category_name'], 'beauty') !== false 
+                                || stripos($product['category_name'], 'salon') !== false 
+                                || stripos($product['category_name'], 'service') !== false);
                         ?>
                         <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
