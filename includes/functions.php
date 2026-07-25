@@ -37,5 +37,20 @@ function getFlash(): ?array {
 }
 
 function baseUrl(string $path = ''): string {
-    return '/e-commerceSystem/' . ltrim($path, '/');
+    static $base = null;
+    if ($base === null) {
+        $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+        if (strpos($scriptName, '/e-commerceSystem/') === 0) {
+            $base = '/e-commerceSystem/';
+        } else {
+            $base = '/';
+        }
+    }
+    // Strip redundant leading subfolder prefix if passed in path
+    if (strpos($path, '/e-commerceSystem/') === 0) {
+        $path = substr($path, strlen('/e-commerceSystem/'));
+    } elseif (strpos($path, 'e-commerceSystem/') === 0) {
+        $path = substr($path, strlen('e-commerceSystem/'));
+    }
+    return $base . ltrim($path, '/');
 }

@@ -57,7 +57,7 @@ if (isLoggedIn()) {
                 <div class="cart-items">
                     <?php foreach ($cartItems as $item): ?>
                     <div class="cart-item">
-                        <img src="<?= sanitize($item['image']) ?>" alt="<?= sanitize($item['name']) ?>" class="cart-item-img">
+                        <img src="<?= sanitize(baseUrl($item['image'])) ?>" alt="<?= sanitize($item['name']) ?>" class="cart-item-img">
 
                         <div class="cart-item-info">
                             <h3><a href="<?= baseUrl('pages/product.php?id=' . $item['product_id']) ?>" style="color: inherit;"><?= sanitize($item['name']) ?></a></h3>

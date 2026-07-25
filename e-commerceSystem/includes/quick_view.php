@@ -36,7 +36,7 @@ echo json_encode([
         'description' => sanitize($product['description']),
         'priceFormatted' => formatPrice($product['price']),
         'stock' => $product['stock'],
-        'image' => sanitize($product['image']),
+        'image' => sanitize(baseUrl($product['image'])),
         'url' => baseUrl('pages/product.php?id=' . $product['id'])
     ]
 ]);

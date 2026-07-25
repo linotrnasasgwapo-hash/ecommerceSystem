@@ -67,7 +67,7 @@ $categories = $stmt->fetchAll();
             <div class="card product-card">
                 <div class="product-img-wrapper" style="position: relative;">
                     <a href="<?= baseUrl('pages/product.php?id=' . $product['id']) ?>">
-                        <img src="<?= sanitize($product['image']) ?>" alt="<?= sanitize($product['name']) ?>" class="product-img" loading="lazy">
+                        <img src="<?= sanitize(baseUrl($product['image'])) ?>" alt="<?= sanitize($product['name']) ?>" class="product-img" loading="lazy">
                     </a>
                     <button type="button" class="quick-view-btn" onclick="quickView(<?= $product['id'] ?>)">
                         <i class="fas fa-eye"></i> Quick View

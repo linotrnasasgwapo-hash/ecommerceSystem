@@ -62,7 +62,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="container">
         <div class="product-detail">
             <div class="product-detail-img">
-                <img src="<?= sanitize($product['image']) ?>" alt="<?= sanitize($product['name']) ?>">
+                <img src="<?= sanitize(baseUrl($product['image'])) ?>" alt="<?= sanitize($product['name']) ?>">
             </div>
             <div class="product-detail-info">
                 <span class="detail-category"><?= sanitize($product['category_name']) ?></span>
@@ -113,7 +113,7 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="card product-card">
                 <div class="product-img-wrapper">
                     <a href="<?= baseUrl('pages/product.php?id=' . $rp['id']) ?>">
-                        <img src="<?= sanitize($rp['image']) ?>" alt="<?= sanitize($rp['name']) ?>" class="product-img" loading="lazy">
+                        <img src="<?= sanitize(baseUrl($rp['image'])) ?>" alt="<?= sanitize($rp['name']) ?>" class="product-img" loading="lazy">
                     </a>
                 </div>
                 <div class="product-info">

@@ -56,7 +56,7 @@ $products = $pdo->query("
             <?php else: ?>
                 <?php foreach ($products as $p): ?>
                 <tr>
-                    <td><img src="<?= sanitize($p['image']) ?>" alt="" class="product-thumb"></td>
+                    <td><img src="<?= sanitize(baseUrl($p['image'])) ?>" alt="" class="product-thumb"></td>
                     <td><?= sanitize($p['name']) ?></td>
                     <td><?= sanitize($p['category_name']) ?></td>
                     <td><?= formatPrice($p['price']) ?></td>

@@ -48,7 +48,7 @@ $wishlistItems = $stmt->fetchAll();
                 <div class="card product-card" id="wishlist-item-<?= $item['product_id'] ?>">
                     <div class="product-img-wrapper">
                         <a href="<?= baseUrl('pages/product.php?id=' . $item['product_id']) ?>">
-                            <img src="<?= sanitize($item['image']) ?>" alt="<?= sanitize($item['name']) ?>" class="product-img" loading="lazy">
+                            <img src="<?= sanitize(baseUrl($item['image'])) ?>" alt="<?= sanitize($item['name']) ?>" class="product-img" loading="lazy">
                         </a>
                         <!-- Remove button -->
                         <button class="wishlist-remove-btn" onclick="removeFromWishlist(<?= $item['product_id'] ?>)" style="position: absolute; top: 10px; right: 10px; background: rgba(11,15,26,0.7); color: var(--text-primary); border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; transition: var(--transition);">

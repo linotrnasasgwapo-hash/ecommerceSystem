@@ -37,7 +37,7 @@ foreach ($items as $item) {
         'name' => sanitize($item['name']),
         'priceFormatted' => formatPrice($item['price']),
         'quantity' => $item['quantity'],
-        'image' => sanitize($item['image'])
+        'image' => sanitize(baseUrl($item['image']))
     ];
 }
 
