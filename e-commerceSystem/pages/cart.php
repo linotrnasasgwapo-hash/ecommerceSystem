@@ -62,6 +62,14 @@ if (isLoggedIn()) {
                         <div class="cart-item-info">
                             <h3><a href="<?= baseUrl('pages/product.php?id=' . $item['product_id']) ?>" style="color: inherit;"><?= sanitize($item['name']) ?></a></h3>
                             <p>Unit price: <?= formatPrice($item['price']) ?></p>
+                            <?php if (!empty($item['booking_date'])): ?>
+                            <div style="margin-top: 6px; font-size: 0.8rem; background: rgba(236,72,153,0.15); color: #ec4899; padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(236,72,153,0.3); display: inline-block;">
+                                <i class="fas fa-calendar-alt"></i> <strong>Appointment:</strong> <?= date('M d, Y', strtotime($item['booking_date'])) ?> at <?= sanitize($item['booking_time']) ?>
+                                <?php if (!empty($item['specialist'])): ?>
+                                <br><i class="fas fa-user-nurse"></i> <strong>Specialist:</strong> <?= sanitize($item['specialist']) ?>
+                                <?php endif; ?>
+                            </div>
+                            <?php endif; ?>
                         </div>
 
                         <form action="<?= baseUrl('includes/cart_actions.php') ?>" method="POST" class="cart-qty-form">

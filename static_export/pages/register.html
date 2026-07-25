@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css?v=1784979903">
+    <link rel="stylesheet" href="../assets/css/style.css?v=1784984623">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         const storedTheme = localStorage.getItem('renalyn-theme') || localStorage.getItem('shopvibe-theme');
@@ -121,6 +121,71 @@ document.addEventListener('DOMContentLoaded', () => {
 <script src="../assets/js/main.js"></script>
 <script>
 window.baseUrlString = '/e-commerceSystem/';
+
+function openBookingModal(id, name, price, image) {
+    const today = new Date().toISOString().split('T')[0];
+    const priceFormatted = '₱' + parseFloat(price).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    
+    Swal.fire({
+        title: '<i class="fas fa-calendar-check" style="color:#ec4899;"></i> Salon Service Booking',
+        html: `
+            <div style="text-align:left; font-family: var(--font);">
+                <div style="display:flex; gap:14px; align-items:center; background:var(--bg-surface); padding:12px; border-radius:12px; margin-bottom:18px; border:1px solid var(--border-color);">
+                    <img src="${image}" style="width:65px; height:65px; border-radius:10px; object-fit:cover;">
+                    <div>
+                        <div style="font-size:0.75rem; color:#ec4899; font-weight:700; text-transform:uppercase;"><i class="fas fa-spa"></i> Salon Service</div>
+                        <h4 style="margin:2px 0; font-size:1.05rem; color:var(--text-primary);">${name}</h4>
+                        <div style="font-weight:700; color:var(--primary); font-size:1.1rem;">${priceFormatted}</div>
+                    </div>
+                </div>
+
+                <form id="swalBookingForm" action="${window.baseUrlString}includes/cart_actions.php" method="POST">
+                    <input type="hidden" name="action" value="book">
+                    <input type="hidden" name="product_id" value="${id}">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="redirect" value="${window.location.href}">
+
+                    <div style="margin-bottom:14px;">
+                        <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom:6px;"><i class="fas fa-calendar-alt"></i> Select Preferred Date *</label>
+                        <input type="date" name="booking_date" min="${today}" value="${today}" required class="form-control" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-dark); color:var(--text-primary); font-family:var(--font);">
+                    </div>
+
+                    <div style="margin-bottom:14px;">
+                        <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom:6px;"><i class="fas fa-clock"></i> Select Time Slot *</label>
+                        <select name="booking_time" required class="form-control" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-dark); color:var(--text-primary); font-family:var(--font);">
+                            <option value="">-- Choose Time Slot --</option>
+                            <option value="09:00 AM">09:00 AM - Morning Slot</option>
+                            <option value="11:00 AM">11:00 AM - Midday Slot</option>
+                            <option value="01:30 PM">01:30 PM - Afternoon Slot</option>
+                            <option value="03:30 PM">03:30 PM - Late Afternoon</option>
+                            <option value="05:30 PM">05:30 PM - Evening Slot</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom:18px;">
+                        <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom:6px;"><i class="fas fa-user-nurse"></i> Specialist Preference</label>
+                        <select name="specialist" class="form-control" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-dark); color:var(--text-primary); font-family:var(--font);">
+                            <option value="Renalyn (Lead Specialist)">Renalyn (Lead Specialist)</option>
+                            <option value="Senior Salon Stylist (Girl)">Senior Salon Stylist (Girl)</option>
+                            <option value="Nail & Beauty Tech (Girl)">Nail & Beauty Tech (Girl)</option>
+                            <option value="First Available Specialist">First Available Specialist</option>
+                        </select>
+                    </div>
+
+                    <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-full" style="background: linear-gradient(135deg, #ec4899, #db2777); padding:14px; border-radius:12px; font-weight:700; font-size:1rem; border:none; color:#fff; cursor:pointer;">
+                        <i class="fas fa-calendar-check"></i> Confirm Service Booking
+                    </button>
+                </form>
+            </div>
+        `,
+        showConfirmButton: false,
+        showCloseButton: true,
+        background: 'var(--bg-card)',
+        color: 'var(--text-primary)',
+        customClass: { popup: 'quick-view-popup' }
+    });
+}
+
 function quickView(id) {
     Swal.fire({
         title: 'Loading...', 
@@ -144,7 +209,7 @@ function quickView(id) {
                         <h2 style="margin:5px 0 10px; font-size:1.5rem;">${d.product.name}</h2>
                         <p style="color:var(--primary); font-size:1.5rem; font-weight:bold;">${d.product.priceFormatted}</p>
                         <p style="color:var(--text-secondary); font-size:0.9rem; margin:15px 0; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden;">${d.product.description}</p>
-                        <a href="${d.product.url}" class="btn btn-primary btn-full" style="margin-top:10px;">View Full Details</a>
+                        <a href="${d.product.url}" class="btn btn-primary btn-full" style="margin-top:10px;">View Details / Booking</a>
                     </div>
                 </div>`,
              width: 800,

@@ -11,30 +11,40 @@ requireLogin();
 $action = $_POST['action'] ?? '';
 $userId = currentUserId();
 
-// ── ADD TO CART ──
-if ($action === 'add') {
-    $productId = (int) ($_POST['product_id'] ?? 0);
-    $quantity  = max(1, (int) ($_POST['quantity'] ?? 1));
+// ── ADD TO CART / BOOK SERVICE ──
+if ($action === 'add' || $action === 'book') {
+    $productId   = (int) ($_POST['product_id'] ?? 0);
+    $quantity    = max(1, (int) ($_POST['quantity'] ?? 1));
+    $bookingDate = trim($_POST['booking_date'] ?? '');
+    $bookingTime = trim($_POST['booking_time'] ?? '');
+    $specialist   = trim($_POST['specialist'] ?? '');
 
     if ($productId <= 0) {
-        setFlash('error', 'Invalid product.');
+        setFlash('error', 'Invalid product or service.');
         redirect(baseUrl('pages/shop.php'));
     }
 
-    // Check if product already in cart
-    $stmt = $pdo->prepare("SELECT id, quantity FROM cart WHERE user_id = ? AND product_id = ?");
-    $stmt->execute([$userId, $productId]);
-    $existing = $stmt->fetch();
+    // Check if product is a service
+    $stmtCategory = $pdo->prepare("SELECT c.name FROM products p JOIN categories c ON p.category_id = c.id WHERE p.id = ?");
+    $stmtCategory->execute([$productId]);
+    $catName = $stmtCategory->fetchColumn() ?: '';
+    $isService = (stripos($catName, 'beauty') !== false || stripos($catName, 'salon') !== false || stripos($catName, 'service') !== false);
 
-    if ($existing) {
-        $stmt = $pdo->prepare("UPDATE cart SET quantity = quantity + ? WHERE id = ?");
-        $stmt->execute([$quantity, $existing['id']]);
-    } else {
-        $stmt = $pdo->prepare("INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)");
-        $stmt->execute([$userId, $productId, $quantity]);
+    if ($isService && (empty($bookingDate) || empty($bookingTime))) {
+        setFlash('error', 'Please select an appointment date and time slot.');
+        $redirect = $_POST['redirect'] ?? baseUrl('pages/product.php?id=' . $productId);
+        redirect($redirect);
     }
 
-    setFlash('success', 'Product added to cart!');
+    // Insert cart entry with booking details
+    $stmt = $pdo->prepare("INSERT INTO cart (user_id, product_id, quantity, booking_date, booking_time, specialist) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$userId, $productId, $quantity, $bookingDate ?: null, $bookingTime ?: null, $specialist ?: null]);
+
+    if ($isService) {
+        setFlash('success', 'Appointment booked! Service added to your cart.');
+    } else {
+        setFlash('success', 'Product added to cart!');
+    }
 
     // Redirect back
     $redirect = $_POST['redirect'] ?? baseUrl('pages/cart.php');

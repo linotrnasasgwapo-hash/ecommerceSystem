@@ -134,12 +134,17 @@ $categories = $stmtCats->fetchAll();
                     </div>
                 <?php else: ?>
                     <div class="product-grid">
-                        <?php foreach ($products as $product): ?>
+                        <?php foreach ($products as $product): 
+                            $isService = ($product['category_id'] == 4 || stripos($product['category_name'], 'beauty') !== false || stripos($product['category_name'], 'salon') !== false || stripos($product['category_name'], 'service') !== false);
+                        ?>
                         <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
                                 <a href="<?= baseUrl('pages/product.php?id=' . $product['id']) ?>">
                                     <img src="<?= sanitize(baseUrl($product['image'])) ?>" alt="<?= sanitize($product['name']) ?>" class="product-img" loading="lazy">
                                 </a>
+                                <?php if ($isService): ?>
+                                <span style="position: absolute; top: 10px; left: 10px; background: rgba(236,72,153,0.9); color: #fff; padding: 4px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; backdrop-filter: blur(4px); box-shadow: 0 2px 10px rgba(0,0,0,0.3);"><i class="fas fa-calendar-check"></i> Salon Service</span>
+                                <?php endif; ?>
                                 <button type="button" class="quick-view-btn" onclick="quickView(<?= $product['id'] ?>)">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
@@ -162,15 +167,21 @@ $categories = $stmtCats->fetchAll();
                                 <div class="product-price"><?= formatPrice($product['price']) ?></div>
                             </div>
                             <div class="product-actions">
-                                <form action="<?= baseUrl('includes/cart_actions.php') ?>" method="POST" style="flex:1;">
-                                    <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="redirect" value="<?= baseUrl('pages/shop.php?' . http_build_query($_GET)) ?>">
-                                    <button type="submit" class="btn btn-primary btn-sm btn-full">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart
+                                <?php if ($isService): ?>
+                                    <button type="button" onclick="openBookingModal(<?= $product['id'] ?>, '<?= sanitize(addslashes($product['name'])) ?>', <?= $product['price'] ?>, '<?= sanitize(baseUrl($product['image'])) ?>')" class="btn btn-primary btn-sm btn-full" style="background: linear-gradient(135deg, #ec4899, #db2777); border: none;">
+                                        <i class="fas fa-calendar-alt"></i> Book Appointment
                                     </button>
-                                </form>
+                                <?php else: ?>
+                                    <form action="<?= baseUrl('includes/cart_actions.php') ?>" method="POST" style="flex:1;">
+                                        <input type="hidden" name="action" value="add">
+                                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" name="redirect" value="<?= baseUrl('pages/shop.php?' . http_build_query($_GET)) ?>">
+                                        <button type="submit" class="btn btn-primary btn-sm btn-full">
+                                            <i class="fas fa-cart-plus"></i> Add to Cart
+                                        </button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <?php endforeach; ?>

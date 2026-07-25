@@ -104,10 +104,20 @@ $items = $stmt->fetchAll();
                     <?php foreach ($items as $item): ?>
                     <tr style="border-bottom: 1px solid var(--border-color);">
                         <td style="padding: 16px 8px; display: flex; align-items: center; gap: 12px;">
-                            <img src="<?= sanitize($item['image']) ?>" alt="<?= sanitize($item['product_name']) ?>" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm);">
-                            <a href="<?= baseUrl('pages/product.php?id=' . $item['product_id']) ?>" style="color: var(--text-primary); font-weight: 500;">
-                                <?= sanitize($item['product_name']) ?>
-                            </a>
+                            <img src="<?= sanitize(baseUrl($item['image'])) ?>" alt="<?= sanitize($item['product_name']) ?>" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm);">
+                            <div>
+                                <a href="<?= baseUrl('pages/product.php?id=' . $item['product_id']) ?>" style="color: var(--text-primary); font-weight: 500;">
+                                    <?= sanitize($item['product_name']) ?>
+                                </a>
+                                <?php if (!empty($item['booking_date'])): ?>
+                                <div style="font-size: 0.78rem; color: #ec4899; margin-top: 3px; font-weight:600;">
+                                    <i class="fas fa-calendar-alt"></i> <strong>Appointment:</strong> <?= date('M d, Y', strtotime($item['booking_date'])) ?> at <?= sanitize($item['booking_time']) ?>
+                                    <?php if (!empty($item['specialist'])): ?>
+                                    <br><i class="fas fa-user-nurse"></i> <strong>Specialist:</strong> <?= sanitize($item['specialist']) ?>
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                            </div>
                         </td>
                         <td style="padding: 16px 8px;"><?= formatPrice($item['price']) ?></td>
                         <td style="padding: 16px 8px;"><?= $item['quantity'] ?></td>

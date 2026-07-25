@@ -64,11 +64,11 @@ try {
     $orderId = $pdo->lastInsertId();
 
     // Insert order items and update stock
-    $stmtItem  = $pdo->prepare("INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)");
+    $stmtItem  = $pdo->prepare("INSERT INTO order_items (order_id, product_id, quantity, price, booking_date, booking_time, specialist) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmtStock = $pdo->prepare("UPDATE products SET stock = stock - ? WHERE id = ? AND stock >= ?");
 
     foreach ($cartItems as $item) {
-        $stmtItem->execute([$orderId, $item['product_id'], $item['quantity'], $item['price']]);
+        $stmtItem->execute([$orderId, $item['product_id'], $item['quantity'], $item['price'], $item['booking_date'] ?? null, $item['booking_time'] ?? null, $item['specialist'] ?? null]);
         $stmtStock->execute([$item['quantity'], $item['product_id'], $item['quantity']]);
     }
 

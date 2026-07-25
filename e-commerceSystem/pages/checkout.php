@@ -84,8 +84,15 @@ $user = $stmt->fetch();
             <div class="order-summary-card">
                 <h2>Order Summary</h2>
                 <?php foreach ($cartItems as $item): ?>
-                <div class="order-item">
-                    <span class="order-item-name"><?= sanitize($item['name']) ?></span>
+                <div class="order-item" style="flex-wrap: wrap; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px; margin-bottom: 8px;">
+                    <div style="flex:1;">
+                        <div class="order-item-name" style="font-weight:600;"><?= sanitize($item['name']) ?></div>
+                        <?php if (!empty($item['booking_date'])): ?>
+                        <div style="font-size: 0.78rem; color: #ec4899; margin-top: 3px; font-weight:600;">
+                            <i class="fas fa-calendar-alt"></i> <?= date('M d, Y', strtotime($item['booking_date'])) ?> at <?= sanitize($item['booking_time']) ?>
+                        </div>
+                        <?php endif; ?>
+                    </div>
                     <span class="order-item-qty">×<?= $item['quantity'] ?></span>
                     <span class="order-item-price"><?= formatPrice($item['price'] * $item['quantity']) ?></span>
                 </div>
