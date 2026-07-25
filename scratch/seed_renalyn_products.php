@@ -34,59 +34,59 @@ try {
     $products = [
         [
             'category_id' => 1,
-            'name' => 'kisses (dark) chocolate',
+            'name' => 'Dark Chocolate Kisses',
             'description' => 'Indulgent rich dark chocolate kisses, velvety smooth and perfect for satisfying sweet cravings.',
             'price' => 199.00,
             'stock' => 50,
-            'image' => 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600'
+            'image' => '/e-commerceSystem/assets/img/products/kisses_dark_chocolate.jpg'
         ],
         [
             'category_id' => 2,
-            'name' => 'Flowers (baby pink)',
+            'name' => 'Baby Pink Flowers',
             'description' => 'A charming bouquet of fresh, delicate baby pink flowers, beautifully arranged for special occasions.',
             'price' => 899.00,
             'stock' => 30,
-            'image' => 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600'
+            'image' => '/e-commerceSystem/assets/img/products/flowers_baby_pink.jpg'
         ],
         [
             'category_id' => 3,
-            'name' => 'Tinola (Native Chicken)',
+            'name' => 'Native Chicken Tinola',
             'description' => 'Authentic Filipino native chicken tinola soup simmered with ginger, green papaya, lemongrass, and chili leaves.',
             'price' => 350.00,
             'stock' => 25,
-            'image' => 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600'
+            'image' => '/e-commerceSystem/assets/img/products/tinola_native_chicken.jpg'
         ],
         [
             'category_id' => 3,
-            'name' => 'fish preto butangan utan(kalabasa,alogbati)',
+            'name' => 'Fried Fish with Veggie Soup',
             'description' => 'Golden crispy fried fish served with wholesome vegetable soup featuring fresh squash (kalabasa) and alugbati greens.',
             'price' => 280.00,
             'stock' => 25,
-            'image' => 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600'
+            'image' => '/e-commerceSystem/assets/img/products/fish_preto_utan.jpg'
         ],
         [
             'category_id' => 4,
-            'name' => 'nails specialist (girl)',
+            'name' => 'Nail Specialist Service',
             'description' => 'Professional manicure, gel polish, and custom nail art performed by expert female nail technicians.',
             'price' => 450.00,
             'stock' => 15,
-            'image' => 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600'
+            'image' => '/e-commerceSystem/assets/img/products/nails_specialist.jpg'
         ],
         [
             'category_id' => 4,
-            'name' => 'Rebond specialist (girl)',
+            'name' => 'Hair Rebonding Service',
             'description' => 'Premium hair rebonding and silk smoothing treatment by top female hair specialists for sleek, shiny hair.',
             'price' => 1999.00,
             'stock' => 10,
-            'image' => 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600'
+            'image' => '/e-commerceSystem/assets/img/products/rebond_specialist.jpg'
         ],
         [
             'category_id' => 4,
-            'name' => 'Make up',
+            'name' => 'Professional Makeup',
             'description' => 'Professional full-face glam makeup application for events, photoshoots, and parties using high-end cosmetics.',
             'price' => 999.00,
             'stock' => 20,
-            'image' => 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600'
+            'image' => '/e-commerceSystem/assets/img/products/makeup_service.jpg'
         ]
     ];
 

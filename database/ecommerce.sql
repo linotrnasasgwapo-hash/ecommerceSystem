@@ -133,11 +133,11 @@ INSERT INTO `categories` (`id`, `name`, `description`) VALUES
 
 -- Products
 INSERT INTO `products` (`category_id`, `name`, `description`, `price`, `stock`, `image`) VALUES
-(1, 'kisses (dark) chocolate', 'Indulgent rich dark chocolate kisses, velvety smooth and perfect for satisfying sweet cravings.', 199.00, 50, '/e-commerceSystem/assets/img/products/kisses_dark_chocolate.jpg'),
-(2, 'Flowers (baby pink)', 'A charming bouquet of fresh, delicate baby pink flowers, beautifully arranged for special occasions.', 899.00, 30, '/e-commerceSystem/assets/img/products/flowers_baby_pink.jpg'),
-(3, 'Tinola (Native Chicken)', 'Authentic Filipino native chicken tinola soup simmered with ginger, green papaya, lemongrass, and chili leaves.', 350.00, 25, '/e-commerceSystem/assets/img/products/tinola_native_chicken.jpg'),
-(3, 'fish preto butangan utan(kalabasa,alogbati)', 'Golden crispy fried fish served with wholesome vegetable soup featuring fresh squash (kalabasa) and alugbati greens.', 280.00, 25, '/e-commerceSystem/assets/img/products/fish_preto_utan.jpg'),
-(4, 'nails specialist (girl)', 'Professional manicure, gel polish, and custom nail art performed by expert female nail technicians.', 450.00, 15, '/e-commerceSystem/assets/img/products/nails_specialist.jpg'),
-(4, 'Rebond specialist (girl)', 'Premium hair rebonding and silk smoothing treatment by top female hair specialists for sleek, shiny hair.', 1999.00, 10, '/e-commerceSystem/assets/img/products/rebond_specialist.jpg'),
-(4, 'Make up', 'Professional full-face glam makeup application for events, photoshoots, and parties using high-end cosmetics.', 999.00, 20, '/e-commerceSystem/assets/img/products/makeup_service.jpg');
+(1, 'Dark Chocolate Kisses', 'Indulgent rich dark chocolate kisses, velvety smooth and perfect for satisfying sweet cravings.', 199.00, 50, '/e-commerceSystem/assets/img/products/kisses_dark_chocolate.jpg'),
+(2, 'Baby Pink Flowers', 'A charming bouquet of fresh, delicate baby pink flowers, beautifully arranged for special occasions.', 899.00, 30, '/e-commerceSystem/assets/img/products/flowers_baby_pink.jpg'),
+(3, 'Native Chicken Tinola', 'Authentic Filipino native chicken tinola soup simmered with ginger, green papaya, lemongrass, and chili leaves.', 350.00, 25, '/e-commerceSystem/assets/img/products/tinola_native_chicken.jpg'),
+(3, 'Fried Fish with Veggie Soup', 'Golden crispy fried fish served with wholesome vegetable soup featuring fresh squash (kalabasa) and alugbati greens.', 280.00, 25, '/e-commerceSystem/assets/img/products/fish_preto_utan.jpg'),
+(4, 'Nail Specialist Service', 'Professional manicure, gel polish, and custom nail art performed by expert female nail technicians.', 450.00, 15, '/e-commerceSystem/assets/img/products/nails_specialist.jpg'),
+(4, 'Hair Rebonding Service', 'Premium hair rebonding and silk smoothing treatment by top female hair specialists for sleek, shiny hair.', 1999.00, 10, '/e-commerceSystem/assets/img/products/rebond_specialist.jpg'),
+(4, 'Professional Makeup', 'Professional full-face glam makeup application for events, photoshoots, and parties using high-end cosmetics.', 999.00, 20, '/e-commerceSystem/assets/img/products/makeup_service.jpg');
 
