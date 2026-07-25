@@ -11,7 +11,7 @@ function getCartCount(PDO $pdo, ?int $userId): int {
 }
 
 function formatPrice(float $price): string {
-    return '$' . number_format($price, 2);
+    return '₱' . number_format($price, 2);
 }
 
 function sanitize(string $data): string {

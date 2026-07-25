@@ -110,7 +110,7 @@ $flash = getFlash();
                     </div>
                     <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                         <strong>Total:</strong>
-                        <span id="cartDropdownTotal" style="color: var(--primary); font-weight: bold;">$0.00</span>
+                        <span id="cartDropdownTotal" style="color: var(--primary); font-weight: bold;">₱0.00</span>
                     </div>
                     <a href="<?= baseUrl('pages/checkout.php') ?>" class="btn btn-primary btn-sm btn-full" style="display: block;">Checkout</a>
                 </div>
