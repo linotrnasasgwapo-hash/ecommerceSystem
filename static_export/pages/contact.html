@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ShopVibe - Your premium online shopping destination for electronics, fashion, accessories and home essentials.">
-    <title>Contact — ShopVibe</title>
+    <meta name="description" content="Renalyn's Favorite Online Shop - Your favorite online destination for chocolates, flowers, delicacies, and salon beauty services.">
+    <title>Contact — Renalyn's Favorite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=1784977267">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const storedTheme = localStorage.getItem('shopvibe-theme');
+        const storedTheme = localStorage.getItem('renalyn-theme') || localStorage.getItem('shopvibe-theme');
         if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
             document.documentElement.classList.add('light-mode');
         }
@@ -25,7 +25,7 @@
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <a href="../index.html" class="logo">
-            <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+            <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
         </a>
 
         <ul class="nav-links" id="navLinks">
@@ -135,7 +135,7 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>Email</h4>
-                        <p>support@shopvibe.com</p>
+                        <p>support@renalynsfavorite.com</p>
                     </div>
                 </div>
                 <div class="contact-info-item">
@@ -184,9 +184,9 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <a href="../index.html" class="footer-logo">
-                    <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+                    <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
                 </a>
-                <p class="footer-desc">Your premium destination for quality products. We bring you the best in electronics, fashion, accessories, and home essentials.</p>
+                <p class="footer-desc">Your favorite online store for chocolates, flowers, home-cooked food, and professional beauty services.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -217,12 +217,12 @@
                 <ul class="contact-info">
                     <li><i class="fas fa-map-marker-alt"></i> Saraet Himamaylan City</li>
                     <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> support@shopvibe.com</li>
+                    <li><i class="fas fa-envelope"></i> support@renalynsfavorite.com</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 ShopVibe. All rights reserved.</p>
+            <p>&copy; 2026 Renalyn's Favorite Online Shop. All rights reserved.</p>
         </div>
     </div>
 </footer>

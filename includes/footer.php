@@ -7,9 +7,9 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <a href="<?= baseUrl() ?>" class="footer-logo">
-                    <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+                    <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
                 </a>
-                <p class="footer-desc">Your premium destination for quality products. We bring you the best in electronics, fashion, accessories, and home essentials.</p>
+                <p class="footer-desc">Your favorite online store for chocolates, flowers, home-cooked food, and professional beauty services.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -40,18 +40,18 @@
                 <ul class="contact-info">
                     <li><i class="fas fa-map-marker-alt"></i> Saraet Himamaylan City</li>
                     <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> support@shopvibe.com</li>
+                    <li><i class="fas fa-envelope"></i> support@renalynsfavorite.com</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <?= date('Y') ?> ShopVibe. All rights reserved.</p>
+            <p>&copy; <?= date('Y') ?> Renalyn's Favorite Online Shop. All rights reserved.</p>
         </div>
     </div>
 </footer>
 <?php else: ?>
 <div class="auth-minimal-footer" style="padding: 20px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; position: relative; z-index: 10;">
-    &copy; <?= date('Y') ?> ShopVibe Premium. All rights reserved.
+    &copy; <?= date('Y') ?> Renalyn's Favorite Online Shop. All rights reserved.
 </div>
 <?php endif; ?>
 

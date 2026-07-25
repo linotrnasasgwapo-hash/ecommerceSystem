@@ -125,23 +125,19 @@ INSERT INTO `users` (`name`, `email`, `password`, `role`) VALUES
 ('John Doe', 'user@shop.com', '$2y$10$YS3rH6aT1Dq3GxzmE0rNcON3SxFJqYTqf8r0L8uKVF0k0jR9CRBXS', 'user');
 
 -- Categories
-INSERT INTO `categories` (`name`, `description`) VALUES
-('Electronics', 'Smartphones, laptops, gadgets and accessories'),
-('Clothing', 'Men and women fashion, casual and formal wear'),
-('Accessories', 'Watches, bags, jewelry and more'),
-('Home & Living', 'Furniture, decor, kitchen essentials');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES
+(1, 'Sweets & Chocolates', 'Delicious chocolates, candies, and sweet treats'),
+(2, 'Flowers & Gifts', 'Fresh flower bouquets and romantic gift arrangements'),
+(3, 'Food & Delicacies', 'Delicious home-cooked Filipino meals and traditional dishes'),
+(4, 'Beauty & Salon Services', 'Expert pampering, nail care, hair rebonding, and makeup services');
 
 -- Products
 INSERT INTO `products` (`category_id`, `name`, `description`, `price`, `stock`, `image`) VALUES
-(1, 'Wireless Bluetooth Headphones', 'Premium noise-cancelling wireless headphones with 30-hour battery life and crystal-clear sound quality.', 79.99, 50, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500'),
-(1, 'Smart Watch Pro', 'Feature-packed smartwatch with health monitoring, GPS tracking, and 7-day battery life.', 199.99, 30, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500'),
-(1, 'Portable Power Bank', 'Ultra-slim 20000mAh power bank with fast charging support for all devices.', 39.99, 100, 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500'),
-(2, 'Classic Denim Jacket', 'Timeless denim jacket crafted from premium cotton with a comfortable modern fit.', 89.99, 40, 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500'),
-(2, 'Cotton Casual T-Shirt', 'Soft breathable cotton t-shirt perfect for everyday comfort and style.', 24.99, 200, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500'),
-(2, 'Running Sneakers', 'Lightweight performance sneakers with cushioned sole for maximum comfort.', 119.99, 60, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500'),
-(3, 'Leather Crossbody Bag', 'Elegant genuine leather crossbody bag with adjustable strap and multiple compartments.', 64.99, 35, 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500'),
-(3, 'Minimalist Analog Watch', 'Sleek minimalist watch with sapphire crystal glass and genuine leather strap.', 149.99, 25, 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500'),
-(3, 'Polarized Sunglasses', 'UV400 polarized sunglasses with lightweight titanium frame.', 54.99, 80, 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500'),
-(4, 'Ceramic Table Lamp', 'Handcrafted ceramic table lamp with warm ambient lighting for any room.', 44.99, 45, 'https://images.unsplash.com/photo-1507473885765-e6ed057ab3fe?w=500'),
-(4, 'Scented Candle Set', 'Set of 3 premium soy wax candles with relaxing lavender, vanilla, and jasmine scents.', 29.99, 120, 'https://images.unsplash.com/photo-1602028915047-37269d1a73f7?w=500'),
-(4, 'Bamboo Kitchen Organizer', 'Eco-friendly bamboo organizer with multiple compartments for kitchen essentials.', 34.99, 70, 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500');
+(1, 'kisses (dark) chocolate', 'Indulgent rich dark chocolate kisses, velvety smooth and perfect for satisfying sweet cravings.', 199.00, 50, 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600'),
+(2, 'Flowers (baby pink)', 'A charming bouquet of fresh, delicate baby pink flowers, beautifully arranged for special occasions.', 899.00, 30, 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600'),
+(3, 'Tinola (Native Chicken)', 'Authentic Filipino native chicken tinola soup simmered with ginger, green papaya, lemongrass, and chili leaves.', 350.00, 25, 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600'),
+(3, 'fish preto butangan utan(kalabasa,alogbati)', 'Golden crispy fried fish served with wholesome vegetable soup featuring fresh squash (kalabasa) and alugbati greens.', 280.00, 25, 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600'),
+(4, 'nails specialist (girl)', 'Professional manicure, gel polish, and custom nail art performed by expert female nail technicians.', 450.00, 15, 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600'),
+(4, 'Rebond specialist (girl)', 'Premium hair rebonding and silk smoothing treatment by top female hair specialists for sleek, shiny hair.', 1999.00, 10, 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600'),
+(4, 'Make up', 'Professional full-face glam makeup application for events, photoshoots, and parties using high-end cosmetics.', 999.00, 20, 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600');
+

@@ -11,15 +11,15 @@ $flash = getFlash();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ShopVibe - Your premium online shopping destination for electronics, fashion, accessories and home essentials.">
-    <title><?= isset($pageTitle) ? sanitize($pageTitle) . ' — ShopVibe' : 'ShopVibe — Premium Online Store' ?></title>
+    <meta name="description" content="Renalyn's Favorite Online Shop - Your favorite online destination for chocolates, flowers, delicacies, and salon beauty services.">
+    <title><?= isset($pageTitle) ? sanitize($pageTitle) . " — Renalyn's Favorite" : "Renalyn's Favorite Online Shop" ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="<?= baseUrl('assets/css/style.css?v=' . time()) ?>">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const storedTheme = localStorage.getItem('shopvibe-theme');
+        const storedTheme = localStorage.getItem('renalyn-theme') || localStorage.getItem('shopvibe-theme');
         if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
             document.documentElement.classList.add('light-mode');
         }
@@ -55,13 +55,13 @@ $flash = getFlash();
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <a href="<?= baseUrl() ?>" class="logo">
-            <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+            <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
         </a>
 <?php else: ?>
 <nav class="navbar auth-navbar" style="background: transparent; border: none; position: absolute; width: 100%; top: 0;">
     <div class="container nav-container" style="justify-content: center; height: 100px;">
         <a href="<?= baseUrl() ?>" class="logo" style="font-size: 2rem;">
-            <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+            <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
         </a>
     </div>
 </nav>

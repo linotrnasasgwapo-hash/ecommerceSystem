@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ShopVibe - Your premium online shopping destination for electronics, fashion, accessories and home essentials.">
-    <title>Shop — ShopVibe</title>
+    <meta name="description" content="Renalyn's Favorite Online Shop - Your favorite online destination for chocolates, flowers, delicacies, and salon beauty services.">
+    <title>Shop — Renalyn's Favorite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=1784977262">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const storedTheme = localStorage.getItem('shopvibe-theme');
+        const storedTheme = localStorage.getItem('renalyn-theme') || localStorage.getItem('shopvibe-theme');
         if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
             document.documentElement.classList.add('light-mode');
         }
@@ -25,7 +25,7 @@
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
         <a href="../index.html" class="logo">
-            <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+            <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
         </a>
 
         <ul class="nav-links" id="navLinks">
@@ -129,20 +129,20 @@
                             </a>
                         </li>
                                                 <li>
-                            <a href="/e-commerceSystem/pages/shop.php?category=3" class="">
-                                Accessories                            </a>
+                            <a href="/e-commerceSystem/pages/shop.php?category=4" class="">
+                                Beauty &amp; Salon Services                            </a>
                         </li>
                                                 <li>
                             <a href="/e-commerceSystem/pages/shop.php?category=2" class="">
-                                Clothing                            </a>
+                                Flowers &amp; Gifts                            </a>
+                        </li>
+                                                <li>
+                            <a href="/e-commerceSystem/pages/shop.php?category=3" class="">
+                                Food &amp; Delicacies                            </a>
                         </li>
                                                 <li>
                             <a href="/e-commerceSystem/pages/shop.php?category=1" class="">
-                                Electronics                            </a>
-                        </li>
-                                                <li>
-                            <a href="/e-commerceSystem/pages/shop.php?category=4" class="">
-                                Home &amp; Living                            </a>
+                                Sweets &amp; Chocolates                            </a>
                         </li>
                                             </ul>
                 </div>
@@ -151,7 +151,7 @@
             <!-- Product List -->
             <div>
                 <div class="shop-toolbar">
-                    <span class="result-count">12 products found</span>
+                    <span class="result-count">7 products found</span>
                     <form method="GET" action="" style="display: flex; gap: 10px; align-items: center;">
                                                                         <select name="sort" onchange="this.form.submit()">
                             <option value="newest" selected>Newest</option>
@@ -165,183 +165,23 @@
                                     <div class="product-grid">
                                                 <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=1">
-                                    <img src="../assets/img/products/wireless_bluetooth_headphones.png" alt="Wireless Bluetooth Headphones" class="product-img" loading="lazy">
-                                </a>
-                                <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
-                                    <i class="fas fa-eye"></i> Quick View
-                                </button>
-                                                            </div>
-                            <div class="product-info">
-                                <span class="product-category">Electronics</span>
-                                <div class="product-stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=1" style="color: inherit;">
-                                        Wireless Bluetooth Headphones                                    </a>
-                                </h3>
-                                <div class="product-price">$79.99</div>
-                            </div>
-                            <div class="product-actions">
-                                <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
-                                    <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="1">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
-                                    <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                                                <div class="card product-card">
-                            <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=2">
-                                    <img src="../assets/img/products/smart_watch_pro.png" alt="Smart Watch Pro" class="product-img" loading="lazy">
-                                </a>
-                                <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
-                                    <i class="fas fa-eye"></i> Quick View
-                                </button>
-                                                            </div>
-                            <div class="product-info">
-                                <span class="product-category">Electronics</span>
-                                <div class="product-stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=2" style="color: inherit;">
-                                        Smart Watch Pro                                    </a>
-                                </h3>
-                                <div class="product-price">$199.99</div>
-                            </div>
-                            <div class="product-actions">
-                                <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
-                                    <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="2">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
-                                    <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                                                <div class="card product-card">
-                            <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=3">
-                                    <img src="../assets/img/products/portable_power_bank.png" alt="Portable Power Bank" class="product-img" loading="lazy">
-                                </a>
-                                <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
-                                    <i class="fas fa-eye"></i> Quick View
-                                </button>
-                                                            </div>
-                            <div class="product-info">
-                                <span class="product-category">Electronics</span>
-                                <div class="product-stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=3" style="color: inherit;">
-                                        Portable Power Bank                                    </a>
-                                </h3>
-                                <div class="product-price">$39.99</div>
-                            </div>
-                            <div class="product-actions">
-                                <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
-                                    <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="3">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
-                                    <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                                                <div class="card product-card">
-                            <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=4">
-                                    <img src="../assets/img/products/classic_denim_jacket.png" alt="Classic Denim Jacket" class="product-img" loading="lazy">
-                                </a>
-                                <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
-                                    <i class="fas fa-eye"></i> Quick View
-                                </button>
-                                                            </div>
-                            <div class="product-info">
-                                <span class="product-category">Clothing</span>
-                                <div class="product-stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=4" style="color: inherit;">
-                                        Classic Denim Jacket                                    </a>
-                                </h3>
-                                <div class="product-price">$89.99</div>
-                            </div>
-                            <div class="product-actions">
-                                <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
-                                    <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="4">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
-                                    <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                                                <div class="card product-card">
-                            <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=5">
-                                    <img src="../assets/img/products/cotton_casual_t-shirt.png" alt="Cotton Casual T-Shirt" class="product-img" loading="lazy">
-                                </a>
-                                <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
-                                    <i class="fas fa-eye"></i> Quick View
-                                </button>
-                                                            </div>
-                            <div class="product-info">
-                                <span class="product-category">Clothing</span>
-                                <div class="product-stars">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=5" style="color: inherit;">
-                                        Cotton Casual T-Shirt                                    </a>
-                                </h3>
-                                <div class="product-price">$24.99</div>
-                            </div>
-                            <div class="product-actions">
-                                <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
-                                    <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="5">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
-                                    <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                                                <div class="card product-card">
-                            <div class="product-img-wrapper" style="position: relative;">
                                 <a href="/e-commerceSystem/pages/product.php?id=6">
-                                    <img src="../assets/img/products/running_sneakers.png" alt="Running Sneakers" class="product-img" loading="lazy">
+                                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600" alt="Rebond specialist (girl)" class="product-img" loading="lazy">
                                 </a>
                                 <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
                                                             </div>
                             <div class="product-info">
-                                <span class="product-category">Clothing</span>
+                                <span class="product-category">Beauty &amp; Salon Services</span>
                                 <div class="product-stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <h3 class="product-name">
                                     <a href="/e-commerceSystem/pages/product.php?id=6" style="color: inherit;">
-                                        Running Sneakers                                    </a>
+                                        Rebond specialist (girl)                                    </a>
                                 </h3>
-                                <div class="product-price">$119.99</div>
+                                <div class="product-price">$1,999.00</div>
                             </div>
                             <div class="product-actions">
                                 <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
@@ -358,22 +198,22 @@
                                                 <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
                                 <a href="/e-commerceSystem/pages/product.php?id=7">
-                                    <img src="../assets/img/products/leather_crossbody_bag.png" alt="Leather Crossbody Bag" class="product-img" loading="lazy">
+                                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600" alt="Make up" class="product-img" loading="lazy">
                                 </a>
                                 <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
                                                             </div>
                             <div class="product-info">
-                                <span class="product-category">Accessories</span>
+                                <span class="product-category">Beauty &amp; Salon Services</span>
                                 <div class="product-stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <h3 class="product-name">
                                     <a href="/e-commerceSystem/pages/product.php?id=7" style="color: inherit;">
-                                        Leather Crossbody Bag                                    </a>
+                                        Make up                                    </a>
                                 </h3>
-                                <div class="product-price">$64.99</div>
+                                <div class="product-price">$999.00</div>
                             </div>
                             <div class="product-actions">
                                 <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
@@ -389,28 +229,28 @@
                         </div>
                                                 <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=8">
-                                    <img src="../assets/img/products/minimalist_analog_watch.png" alt="Minimalist Analog Watch" class="product-img" loading="lazy">
+                                <a href="/e-commerceSystem/pages/product.php?id=5">
+                                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600" alt="nails specialist (girl)" class="product-img" loading="lazy">
                                 </a>
                                 <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
                                                             </div>
                             <div class="product-info">
-                                <span class="product-category">Accessories</span>
+                                <span class="product-category">Beauty &amp; Salon Services</span>
                                 <div class="product-stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=8" style="color: inherit;">
-                                        Minimalist Analog Watch                                    </a>
+                                    <a href="/e-commerceSystem/pages/product.php?id=5" style="color: inherit;">
+                                        nails specialist (girl)                                    </a>
                                 </h3>
-                                <div class="product-price">$149.99</div>
+                                <div class="product-price">$450.00</div>
                             </div>
                             <div class="product-actions">
                                 <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
                                     <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="8">
+                                    <input type="hidden" name="product_id" value="5">
                                     <input type="hidden" name="quantity" value="1">
                                     <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
                                     <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
@@ -421,28 +261,28 @@
                         </div>
                                                 <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=9">
-                                    <img src="../assets/img/products/polarized_sunglasses.png" alt="Polarized Sunglasses" class="product-img" loading="lazy">
+                                <a href="/e-commerceSystem/pages/product.php?id=4">
+                                    <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600" alt="fish preto butangan utan(kalabasa,alogbati)" class="product-img" loading="lazy">
                                 </a>
                                 <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
                                                             </div>
                             <div class="product-info">
-                                <span class="product-category">Accessories</span>
+                                <span class="product-category">Food &amp; Delicacies</span>
                                 <div class="product-stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=9" style="color: inherit;">
-                                        Polarized Sunglasses                                    </a>
+                                    <a href="/e-commerceSystem/pages/product.php?id=4" style="color: inherit;">
+                                        fish preto butangan utan(kalabasa,alogbati)                                    </a>
                                 </h3>
-                                <div class="product-price">$54.99</div>
+                                <div class="product-price">$280.00</div>
                             </div>
                             <div class="product-actions">
                                 <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
                                     <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="9">
+                                    <input type="hidden" name="product_id" value="4">
                                     <input type="hidden" name="quantity" value="1">
                                     <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
                                     <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
@@ -453,28 +293,28 @@
                         </div>
                                                 <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=10">
-                                    <img src="../assets/img/products/ceramic_table_lamp.png" alt="Ceramic Table Lamp" class="product-img" loading="lazy">
+                                <a href="/e-commerceSystem/pages/product.php?id=2">
+                                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600" alt="Flowers (baby pink)" class="product-img" loading="lazy">
                                 </a>
                                 <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
                                                             </div>
                             <div class="product-info">
-                                <span class="product-category">Home &amp; Living</span>
+                                <span class="product-category">Flowers &amp; Gifts</span>
                                 <div class="product-stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=10" style="color: inherit;">
-                                        Ceramic Table Lamp                                    </a>
+                                    <a href="/e-commerceSystem/pages/product.php?id=2" style="color: inherit;">
+                                        Flowers (baby pink)                                    </a>
                                 </h3>
-                                <div class="product-price">$44.99</div>
+                                <div class="product-price">$899.00</div>
                             </div>
                             <div class="product-actions">
                                 <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
                                     <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="10">
+                                    <input type="hidden" name="product_id" value="2">
                                     <input type="hidden" name="quantity" value="1">
                                     <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
                                     <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
@@ -485,28 +325,28 @@
                         </div>
                                                 <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=11">
-                                    <img src="../assets/img/products/scented_candle_set.png" alt="Scented Candle Set" class="product-img" loading="lazy">
+                                <a href="/e-commerceSystem/pages/product.php?id=3">
+                                    <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600" alt="Tinola (Native Chicken)" class="product-img" loading="lazy">
                                 </a>
                                 <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
                                                             </div>
                             <div class="product-info">
-                                <span class="product-category">Home &amp; Living</span>
+                                <span class="product-category">Food &amp; Delicacies</span>
                                 <div class="product-stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=11" style="color: inherit;">
-                                        Scented Candle Set                                    </a>
+                                    <a href="/e-commerceSystem/pages/product.php?id=3" style="color: inherit;">
+                                        Tinola (Native Chicken)                                    </a>
                                 </h3>
-                                <div class="product-price">$29.99</div>
+                                <div class="product-price">$350.00</div>
                             </div>
                             <div class="product-actions">
                                 <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
                                     <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="11">
+                                    <input type="hidden" name="product_id" value="3">
                                     <input type="hidden" name="quantity" value="1">
                                     <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
                                     <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
@@ -517,28 +357,28 @@
                         </div>
                                                 <div class="card product-card">
                             <div class="product-img-wrapper" style="position: relative;">
-                                <a href="/e-commerceSystem/pages/product.php?id=12">
-                                    <img src="../assets/img/products/bamboo_kitchen_organizer.png" alt="Bamboo Kitchen Organizer" class="product-img" loading="lazy">
+                                <a href="/e-commerceSystem/pages/product.php?id=1">
+                                    <img src="https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600" alt="kisses (dark) chocolate" class="product-img" loading="lazy">
                                 </a>
                                 <button type="button" class="quick-view-btn" onclick="alert('Quick View requires PHP backend.')">
                                     <i class="fas fa-eye"></i> Quick View
                                 </button>
                                                             </div>
                             <div class="product-info">
-                                <span class="product-category">Home &amp; Living</span>
+                                <span class="product-category">Sweets &amp; Chocolates</span>
                                 <div class="product-stars">
                                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <h3 class="product-name">
-                                    <a href="/e-commerceSystem/pages/product.php?id=12" style="color: inherit;">
-                                        Bamboo Kitchen Organizer                                    </a>
+                                    <a href="/e-commerceSystem/pages/product.php?id=1" style="color: inherit;">
+                                        kisses (dark) chocolate                                    </a>
                                 </h3>
-                                <div class="product-price">$34.99</div>
+                                <div class="product-price">$199.00</div>
                             </div>
                             <div class="product-actions">
                                 <form action="/e-commerceSystem/includes/cart_actions.php" method="POST" style="flex:1;">
                                     <input type="hidden" name="action" value="add">
-                                    <input type="hidden" name="product_id" value="12">
+                                    <input type="hidden" name="product_id" value="1">
                                     <input type="hidden" name="quantity" value="1">
                                     <input type="hidden" name="redirect" value="/e-commerceSystem/pages/shop.php?">
                                     <button type="button" onclick="alert('Backend features disabled in static view.')" class="btn btn-primary btn-sm btn-full">
@@ -564,9 +404,9 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <a href="../index.html" class="footer-logo">
-                    <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+                    <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
                 </a>
-                <p class="footer-desc">Your premium destination for quality products. We bring you the best in electronics, fashion, accessories, and home essentials.</p>
+                <p class="footer-desc">Your favorite online store for chocolates, flowers, home-cooked food, and professional beauty services.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -597,12 +437,12 @@
                 <ul class="contact-info">
                     <li><i class="fas fa-map-marker-alt"></i> Saraet Himamaylan City</li>
                     <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> support@shopvibe.com</li>
+                    <li><i class="fas fa-envelope"></i> support@renalynsfavorite.com</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 ShopVibe. All rights reserved.</p>
+            <p>&copy; 2026 Renalyn's Favorite Online Shop. All rights reserved.</p>
         </div>
     </div>
 </footer>

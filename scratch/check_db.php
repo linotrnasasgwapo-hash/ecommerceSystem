@@ -1,6 +1,10 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
-$stmt = $pdo->prepare("SELECT id, name, image FROM products WHERE name LIKE ?");
-$stmt->execute(['%Ceramic Table Lamp%']);
-$product = $stmt->fetch(PDO::FETCH_ASSOC);
-echo json_encode($product);
+
+echo "--- CATEGORIES ---\n";
+$stmt = $pdo->query("SELECT * FROM categories");
+print_r($stmt->fetchAll());
+
+echo "--- PRODUCTS ---\n";
+$stmt = $pdo->query("SELECT p.*, c.name as category_name FROM products p JOIN categories c ON p.category_id = c.id");
+print_r($stmt->fetchAll());

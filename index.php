@@ -18,9 +18,9 @@ $categories = $stmt->fetchAll();
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <span class="hero-badge animate-fade-up" style="opacity:0;"><i class="fas fa-fire"></i> New Arrivals 2026</span>
-            <h1 class="animate-fade-up delay-1" style="opacity:0;">Discover <span>Premium</span> Products Online</h1>
-            <p class="animate-fade-up delay-2" style="opacity:0;">Shop the latest trends in electronics, fashion, and lifestyle with fast delivery and premium quality guaranteed.</p>
+            <span class="hero-badge animate-fade-up" style="opacity:0;"><i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's Favorites</span>
+            <h1 class="animate-fade-up delay-1" style="opacity:0;">Welcome to <span>Renalyn's Favorite</span> Online Shop</h1>
+            <p class="animate-fade-up delay-2" style="opacity:0;">Discover Renalyn's top handpicked favorites — from rich dark chocolates and baby pink flowers to authentic native chicken tinola and professional beauty services!</p>
             <div class="hero-actions animate-fade-up delay-3" style="opacity:0;">
                 <a href="<?= baseUrl('pages/shop.php') ?>" class="btn btn-primary btn-lg">
                     <i class="fas fa-shopping-bag"></i> Shop Now
@@ -38,11 +38,11 @@ $categories = $stmt->fetchAll();
     <div class="container">
         <div class="section-header">
             <h2>Browse <span>Categories</span></h2>
-            <p>Explore our curated collections across all your favorite categories</p>
+            <p>Explore our curated collections across Renalyn's favorite categories</p>
         </div>
         <div class="category-grid">
             <?php
-            $icons = ['fas fa-microchip', 'fas fa-tshirt', 'fas fa-gem', 'fas fa-couch'];
+            $icons = ['fas fa-cookie-bite', 'fas fa-spa', 'fas fa-utensils', 'fas fa-cut'];
             foreach ($categories as $i => $cat):
             ?>
             <a href="<?= baseUrl('pages/shop.php?category=' . $cat['id']) ?>" class="category-card">

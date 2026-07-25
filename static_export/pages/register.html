@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ShopVibe - Your premium online shopping destination for electronics, fashion, accessories and home essentials.">
-    <title>Register — ShopVibe</title>
+    <meta name="description" content="Renalyn's Favorite Online Shop - Your favorite online destination for chocolates, flowers, delicacies, and salon beauty services.">
+    <title>Register — Renalyn's Favorite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=1784977270">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const storedTheme = localStorage.getItem('shopvibe-theme');
+        const storedTheme = localStorage.getItem('renalyn-theme') || localStorage.getItem('shopvibe-theme');
         if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
             document.documentElement.classList.add('light-mode');
         }
@@ -25,7 +25,7 @@
 <nav class="navbar auth-navbar" style="background: transparent; border: none; position: absolute; width: 100%; top: 0;">
     <div class="container nav-container" style="justify-content: center; height: 100px;">
         <a href="../index.html" class="logo" style="font-size: 2rem;">
-            <i class="fas fa-bolt"></i> Shop<span>Vibe</span>
+            <i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span>
         </a>
     </div>
 </nav>
@@ -38,7 +38,7 @@
     <div class="auth-container">
         <div class="auth-card">
             <h1>Create Account</h1>
-            <p class="auth-subtitle">Join the premium ShopVibe community</p>
+            <p class="auth-subtitle">Join Renalyn's Favorite Online Shop community</p>
 
             <form action="/e-commerceSystem/includes/auth_actions.php" method="POST" data-validate>
                 <input type="hidden" name="action" value="register">
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Footer -->
 <div class="auth-minimal-footer" style="padding: 20px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; position: relative; z-index: 10;">
-    &copy; 2026 ShopVibe Premium. All rights reserved.
+    &copy; 2026 Renalyn's Favorite Online Shop. All rights reserved.
 </div>
 
 <script src="../assets/js/main.js"></script>

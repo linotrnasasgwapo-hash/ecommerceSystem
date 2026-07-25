@@ -1,6 +1,6 @@
-# ⚡ ShopVibe — Premium E-Commerce System
+# ❤️ Renalyn's Favorite Online Shop
 
-A full-featured, modern e-commerce web application built with **PHP**, **MySQL**, and **vanilla CSS/JS**. ShopVibe delivers a premium online shopping experience with a sleek dark/light theme, responsive design, and a complete admin dashboard.
+A full-featured, modern e-commerce web application built with **PHP**, **MySQL**, and **vanilla CSS/JS**. Renalyn's Favorite Online Shop delivers a delightful shopping experience featuring Renalyn's top favorite chocolates, flowers, home-cooked Filipino meals, and beauty services.
 
 ---
 

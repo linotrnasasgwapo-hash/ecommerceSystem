@@ -28,18 +28,30 @@
     --transition: all 0.3s ease;
     --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --container-width: 1200px;
+    --nav-bg: rgba(11,15,26,0.85);
+    --dropdown-bg: rgba(30, 41, 59, 0.95);
+    --grad-1: #111827;
+    --grad-2: #0f172a;
+    --grad-auth-1: rgba(11, 15, 26, 0.4);
+    --grad-auth-2: rgba(11, 15, 26, 0.9);
 }
 
 /* ── Light Mode Properties ── */
 :root.light-mode {
-    --bg-dark: #f8fafc;
+    --bg-dark: #faf9f6; /* Softer, eye-friendly off-white */
     --bg-card: #ffffff;
-    --bg-card-hover: #f1f5f9;
-    --bg-surface: #f1f5f9;
-    --text-primary: #0f172a;
-    --text-secondary: #334155;
-    --text-muted: #64748b;
-    --border-color: #cbd5e1;
+    --bg-card-hover: #fdfaf3;
+    --bg-surface: #f4eedf; /* Soft surface tone */
+    --text-primary: #1e1b18; /* Softer text color */
+    --text-secondary: #4a453f;
+    --text-muted: #78716c;
+    --border-color: #e5dfd3;
+    --nav-bg: rgba(250, 249, 246, 0.85);
+    --dropdown-bg: rgba(255, 255, 255, 0.95);
+    --grad-1: #f3e9d2; /* Soothing champagne */
+    --grad-2: #e8d7b3; /* Slightly deeper champagne */
+    --grad-auth-1: rgba(250, 249, 246, 0.7);
+    --grad-auth-2: rgba(250, 249, 246, 0.95);
 }
 
 /* ── Reset & Base ── */
@@ -128,7 +140,7 @@ ul { list-style: none; }
 
 /* ── Navbar ── */
 .navbar {
-    background: rgba(11,15,26,0.85);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
@@ -228,7 +240,7 @@ ul { list-style: none; }
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
-    background: rgba(30, 41, 59, 0.95);
+    background: var(--dropdown-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -453,7 +465,7 @@ ul { list-style: none; }
 
 /* ── Hero Section ── */
 .hero {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #111827 50%, #0f172a 100%);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--grad-1) 50%, var(--grad-2) 100%);
     padding: 100px 0 80px;
     position: relative;
     overflow: hidden;
@@ -629,7 +641,7 @@ select.form-control {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(11, 15, 26, 0.4), rgba(11, 15, 26, 0.9));
+    background: radial-gradient(circle at center, var(--grad-auth-1), var(--grad-auth-2));
     z-index: 1;
 }
 

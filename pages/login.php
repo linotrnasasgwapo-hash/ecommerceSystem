@@ -19,7 +19,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="auth-container">
         <div class="auth-card">
             <h1>Welcome Back</h1>
-            <p class="auth-subtitle">Sign in to your premium ShopVibe account</p>
+            <p class="auth-subtitle">Sign in to your Renalyn's Favorite Online Shop account</p>
 
             <form action="<?= baseUrl('includes/auth_actions.php') ?>" method="POST" data-validate>
                 <input type="hidden" name="action" value="login">
@@ -60,7 +60,7 @@ require_once __DIR__ . '/../includes/header.php';
             </div>
 
             <div class="auth-footer">
-                Don't have an account? <a href="<?= baseUrl('pages/register.php') ?>">Join ShopVibe</a>
+                Don't have an account? <a href="<?= baseUrl('pages/register.php') ?>">Join Renalyn's Favorite</a>
             </div>
         </div>
     </div>

@@ -22,13 +22,13 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="container">
         <div class="about-grid">
             <div class="about-text">
-                <h2>We Are <span>ShopVibe</span></h2>
-                <p>Founded in 2026, ShopVibe has grown from a small startup into a premier online shopping destination. We believe that everyone deserves access to quality products at fair prices, delivered with exceptional service.</p>
-                <p>Our mission is to curate the best products across electronics, fashion, accessories, and home essentials — all in one place. We work directly with manufacturers and verified suppliers to ensure authenticity and quality.</p>
-                <p>With thousands of satisfied customers and counting, we're committed to making your shopping experience seamless, enjoyable, and rewarding.</p>
+                <h2>Welcome to <span>Renalyn's Favorite Online Shop</span></h2>
+                <p>Founded with love in 2026, Renalyn's Favorite Online Shop brings together Renalyn's absolute favorite treats, flowers, home-cooked dishes, and pampering salon services!</p>
+                <p>Our mission is to curate top-quality dark chocolates, fresh baby pink flower arrangements, comforting native chicken tinola, crispy fried fish with kalabasa & alugbati vegetable soup, as well as expert nail care, hair rebonding, and professional makeup services.</p>
+                <p>Whether you are treating yourself or someone special, we're dedicated to delivering delight and exceptional service with every order.</p>
             </div>
             <div class="about-img">
-                <img src="../assets/img/team-group.jpg" alt="ShopVibe Team">
+                <img src="../assets/img/team-group.jpg" alt="Renalyn's Favorite Online Shop Team">
             </div>
         </div>
     </div>

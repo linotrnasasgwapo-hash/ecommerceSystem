@@ -19,7 +19,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="auth-container">
         <div class="auth-card">
             <h1>Create Account</h1>
-            <p class="auth-subtitle">Join the premium ShopVibe community</p>
+            <p class="auth-subtitle">Join Renalyn's Favorite Online Shop community</p>
 
             <form action="<?= baseUrl('includes/auth_actions.php') ?>" method="POST" data-validate>
                 <input type="hidden" name="action" value="register">

@@ -43,7 +43,14 @@ $pagesToExport = [
 
 foreach ($pagesToExport as $phpFile => $htmlFile) {
     echo "Exporting $phpFile...\n";
-    $html = file_get_contents($baseUrl . $phpFile);
+    $html = @file_get_contents($baseUrl . $phpFile);
+    if ($html === false) {
+        // Fallback to PHP output buffering
+        ob_start();
+        $_SERVER['PHP_SELF'] = '/' . $phpFile;
+        include __DIR__ . '/' . $phpFile;
+        $html = ob_get_clean();
+    }
     
     if ($html !== false) {
         // Rewrite navigation links

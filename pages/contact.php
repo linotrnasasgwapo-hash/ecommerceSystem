@@ -44,7 +44,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>Email</h4>
-                        <p>support@shopvibe.com</p>
+                        <p>support@renalynsfavorite.com</p>
                     </div>
                 </div>
                 <div class="contact-info-item">

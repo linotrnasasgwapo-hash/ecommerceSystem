@@ -16,14 +16,14 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($pageTitle) ? sanitize($pageTitle) . ' — Admin' : 'Admin Panel' ?> — ShopVibe</title>
+    <title><?= isset($pageTitle) ? sanitize($pageTitle) . ' — Admin' : 'Admin Panel' ?> — Renalyn's Favorite Online Shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="<?= baseUrl('assets/css/style.css') ?>">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const storedTheme = localStorage.getItem('shopvibe-theme');
+        const storedTheme = localStorage.getItem('renalyn-theme') || localStorage.getItem('shopvibe-theme');
         if (storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
             document.documentElement.classList.add('light-mode');
         }
@@ -58,7 +58,7 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
     <!-- Sidebar -->
     <aside class="admin-sidebar" id="adminSidebar">
         <div class="admin-logo">
-            <a href="<?= baseUrl('admin/') ?>"><i class="fas fa-bolt"></i> Shop<span>Vibe</span></a>
+            <a href="<?= baseUrl('admin/') ?>"><i class="fas fa-heart" style="color:#ff4757;"></i> Renalyn's<span>Favorite</span></a>
         </div>
         <div class="admin-label">Main Menu</div>
         <nav class="admin-nav">
