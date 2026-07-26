@@ -28,7 +28,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <p>With thousands of happy customers and counting, our team is dedicated to delivering delight, premium quality, and exceptional care with every single order and appointment booking.</p>
             </div>
             <div class="about-img">
-                <img src="<?= baseUrl('assets/img/team-group.jpg') ?>" alt="Renalyn's Favorite Online Shop Team" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; object-fit: cover;">
+                <img src="<?= baseUrl('assets/img/team-group.jpg') ?>" alt="Renalyn's Favorite Online Shop Team" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; max-height: 520px; object-fit: cover; object-position: center;">
             </div>
         </div>
     </div>
