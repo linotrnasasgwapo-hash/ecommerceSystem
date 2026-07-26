@@ -22,13 +22,13 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="container">
         <div class="about-grid">
             <div class="about-text">
-                <h2>We Are <span>ShopVibe</span></h2>
-                <p>Founded in 2026, ShopVibe has grown from a small startup into a premier online shopping destination. We believe that everyone deserves access to quality products at fair prices, delivered with exceptional service.</p>
-                <p>Our mission is to curate the best products across electronics, fashion, accessories, and home essentials — all in one place. We work directly with manufacturers and verified suppliers to ensure authenticity and quality.</p>
-                <p>With thousands of satisfied customers and counting, we're committed to making your shopping experience seamless, enjoyable, and rewarding.</p>
+                <h2>Welcome to <span>Renalyn's Favorite</span></h2>
+                <p>Founded with love in 2026, <strong>Renalyn's Favorite Online Shop</strong> brings together Renalyn's absolute favorite treats, fresh flowers, home-cooked dishes, and pampering salon services into one seamless hybrid experience!</p>
+                <p>We believe everyone deserves easy access to authentic, high-quality favorites — whether it's rich dark chocolate kisses, fresh baby pink flower arrangements, comforting native chicken tinola, crispy fried fish with veggie soup, or professional salon appointments for hair rebonding, makeup, and nail specialization.</p>
+                <p>With thousands of happy customers and counting, our team is dedicated to delivering delight, premium quality, and exceptional care with every single order and appointment booking.</p>
             </div>
             <div class="about-img">
-                <img src="../assets/img/team-group.jpg" alt="ShopVibe Team">
+                <img src="<?= baseUrl('assets/img/team-group.jpg') ?>" alt="Renalyn's Favorite Online Shop Team" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; object-fit: cover;">
             </div>
         </div>
     </div>
@@ -43,16 +43,16 @@ require_once __DIR__ . '/../includes/header.php';
                 <div class="stat-label">Happy Customers</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Products</div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Quality Guaranteed</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Brands</div>
+                <div class="stat-number">7</div>
+                <div class="stat-label">Curated Favorites & Services</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">24/7</div>
-                <div class="stat-label">Support</div>
+                <div class="stat-label">Customer Care</div>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="container">
         <div class="section-header">
             <h2>Meet Our <span>Team</span></h2>
-            <p>The people behind ShopVibe's mission</p>
+            <p>The passionate team behind Renalyn's Favorite Online Shop</p>
         </div>
         <div class="team-grid">
             <div class="team-card">
