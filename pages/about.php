@@ -58,41 +58,4 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 </section>
 
-<!-- Team Section -->
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Meet Our <span>Team</span></h2>
-            <p>The passionate team behind Renalyn's Favorite Online Shop</p>
-        </div>
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="team-avatar"><i class="fas fa-user-tie"></i></div>
-                <h3>Avelino Tenasas</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar"><i class="fas fa-box-open"></i></div>
-                <h3>Jhomel Gaylon</h3>
-                <p>Head of Product</p>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar"><i class="fas fa-laptop-code"></i></div>
-                <h3>Johlin Presquito</h3>
-                <p>Lead Developer</p>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar"><i class="fas fa-headset"></i></div>
-                <h3>Ma. Luiz Nanoy</h3>
-                <p>Customer Success</p>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar"><i class="fas fa-paint-brush"></i></div>
-                <h3>Sheila Marie Questorio</h3>
-                <p>Lead Designer</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
