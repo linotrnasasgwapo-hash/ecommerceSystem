@@ -1,0 +1,2 @@
+<?php
+echo "BOOKING_SYSTEM_VERSION_2.0_OK";
